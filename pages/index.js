@@ -23,7 +23,7 @@ import { H3, Text } from 'typography';
 import { Button } from 'common/button';
 
 // Components
-import { GraphqlDemo, HTTPDemo } from 'components';
+import { HTTPDemo } from 'components';
 
 function HomePage({ t, language }) {
   const { languageService } = useMobxServices();
@@ -89,18 +89,6 @@ function HomePage({ t, language }) {
             </Text>
             <HTTPDemo />
           </Flex>
-          <H3 py='2rem'>GraphQl</H3>
-          <Flex flexDirection='column'>
-            <Text>
-              This is a demo for <Text bold>apollo</Text> and{' '}
-              <Text bold>graphql</Text>
-            </Text>
-            <Text>
-              The graphql backend is generously made available by{' '}
-              <a href='https://rickandmortyapi.com/'>Axel Fuhrmann</a>
-            </Text>
-          </Flex>
-          <GraphqlDemo />
         </Content>
       </Container>
     </>

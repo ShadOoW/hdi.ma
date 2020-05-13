@@ -2,10 +2,8 @@ import React from 'react';
 import App from 'next/app';
 import { parseCookies } from 'nookies';
 import { ThemeProvider } from 'styled-components';
-import { ClientContext } from 'graphql-hooks';
 import { getServices, ServiceProvider } from 'services';
 
-import withGraphQLClient from 'lib/with-graphql-client';
 import { i18n, appWithTranslation } from 'lib/i18n';
 
 import { theme, GlobalStyles } from 'styles';
@@ -43,7 +41,7 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps, graphQLClient, initialData } = this.props;
+    const { Component, pageProps, initialData } = this.props;
 
     // During SSR, this will create new Service instances so having `initialData` is crucial.
     // During the client-side hydration, same applies.
@@ -54,15 +52,13 @@ class MyApp extends App {
       <ThemeProvider theme={theme}>
         <>
           <GlobalStyles />
-          <ClientContext.Provider value={graphQLClient}>
-            <ServiceProvider value={services}>
-              <Component {...pageProps} />
-            </ServiceProvider>
-          </ClientContext.Provider>
+          <ServiceProvider value={services}>
+            <Component {...pageProps} />
+          </ServiceProvider>
         </>
       </ThemeProvider>
     );
   }
 }
 
-export default appWithTranslation(withGraphQLClient(MyApp));
+export default appWithTranslation(MyApp);
