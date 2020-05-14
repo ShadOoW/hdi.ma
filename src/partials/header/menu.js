@@ -47,6 +47,7 @@ const Menu = () => {
         dirBorderRight='1px solid'
         dirMarginRight='.5rem'
         p={[3, 0]}
+        zIndex='9999'
       >
         <Flex
           as='ul'

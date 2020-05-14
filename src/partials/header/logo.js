@@ -7,17 +7,13 @@ import { Direction } from 'utils';
 import { Flex } from 'layout';
 
 // Import Typography
-import { H3 } from 'typography';
-
-// Import Components
-import Cursor from './cursor';
+import { H1 } from 'typography';
 
 const Logo = () => (
   <Flex alignItems='center'>
-    <H3 as={Direction} dirPaddingRight='1rem'>
-      ~/starter-kit
-    </H3>
-    <Cursor />
+    <H1 as={Direction} dirPaddingRight='1rem'>
+      HDI
+    </H1>
   </Flex>
 );
 
