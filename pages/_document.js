@@ -65,6 +65,11 @@ export default class MyDocument extends Document {
             href='/manifest/safari-pinned-tab.svg'
             color='#5bbad5'
           />
+          <link
+            href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'
+            rel='stylesheet'
+          />
+
           <meta name='apple-mobile-web-app-title' content='Web Starter Kit' />
           <meta name='application-name' content='Web Starter Kit' />
           <meta name='msapplication-TileColor' content='#da532c' />

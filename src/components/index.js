@@ -1,4 +1,3 @@
-import HTTPDemo from './http-demo';
-import Readme from './readme';
+import Videos from './videos/videos';
 
-export { HTTPDemo, Readme };
+export { Videos };

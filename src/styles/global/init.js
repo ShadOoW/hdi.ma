@@ -10,6 +10,7 @@ const init = css`
     --color-foreground: ${lightColorsTheme.colors.foreground};
     --color-foregroundAccent: ${lightColorsTheme.colors.foregroundAccent};
     --color-foregroundError: ${lightColorsTheme.colors.foregroundError};
+    --color-border: ${lightColorsTheme.colors.border};
 
     &.dark {
       --color-background: ${darkColorsTheme.colors.background};
@@ -17,6 +18,7 @@ const init = css`
       --color-foreground: ${darkColorsTheme.colors.foreground};
       --color-foregroundAccent: ${darkColorsTheme.colors.foregroundAccent};
       --color-foregroundError: ${darkColorsTheme.colors.foregroundError};
+      --color-border: ${lightColorsTheme.colors.border};
     }
   }
   body {
@@ -24,7 +26,7 @@ const init = css`
     color: var(--color-foreground);
     font-size: ${(props) => props.theme.fontSizes.base};
     line-height: ${(props) => props.theme.lineHeights.base};
-    font-family: monospace, monospace;
+    font-family: 'Roboto', sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     font-feature-settings: 'liga', 'tnum', 'case', 'calt', 'zero', 'ss01',

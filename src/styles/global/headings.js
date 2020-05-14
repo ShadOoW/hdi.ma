@@ -7,8 +7,8 @@ const headings = css`
   h4,
   h5,
   h6 {
-    font-weight: bold;
     margin: 0;
+    font-weight: normal;
   }
   h1 {
     font-size: ${(props) => props.theme.fontSizes.h1};
@@ -21,18 +21,6 @@ const headings = css`
   h3 {
     font-size: ${(props) => props.theme.fontSizes.h3};
     line-height: ${(props) => props.theme.lineHeights.h3};
-  }
-  h4 {
-    font-size: ${(props) => props.theme.fontSizes.h4};
-    line-height: ${(props) => props.theme.lineHeights.h4};
-  }
-  h5 {
-    font-size: ${(props) => props.theme.fontSizes.h5};
-    line-height: ${(props) => props.theme.lineHeights.h5};
-  }
-  h6 {
-    font-size: ${(props) => props.theme.fontSizes.h6};
-    line-height: ${(props) => props.theme.lineHeights.h6};
   }
 `;
 

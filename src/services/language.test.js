@@ -6,7 +6,7 @@ import LanguageService from './language';
 jest.mock('lib/i18n');
 jest.mock('utils');
 
-describe('Github Service', () => {
+describe('Language Service', () => {
   let service;
 
   beforeEach(() => {

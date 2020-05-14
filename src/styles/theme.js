@@ -2,29 +2,20 @@ import { invert } from 'polished';
 
 export const fontSizeInit = '10px';
 
-export const fontSizeBase = '1.6rem';
-export const lineHeightBase = '2.4rem';
+export const fontSizeBase = '1.4rem';
+export const lineHeightBase = '1.4rem';
 
-export const fontSizeSmall = '1.4rem';
-export const lineHeightSmall = '1.8rem';
+export const fontSizeSmall = '1.2rem';
+export const lineHeightSmall = '1.4rem';
 
 export const fontSizeH1 = '4.4rem';
 export const lineHeightH1 = '4.8rem';
 
-export const fontSizeH2 = '3.6rem';
-export const lineHeightH2 = '4.2rem';
+export const fontSizeH2 = '1.8rem';
+export const lineHeightH2 = '2.4rem';
 
-export const fontSizeH3 = '2.2rem';
-export const lineHeightH3 = '3rem';
-
-export const fontSizeH4 = '2rem';
-export const lineHeightH4 = '3rem';
-
-export const fontSizeH5 = fontSizeBase;
-export const lineHeightH5 = lineHeightBase;
-
-export const fontSizeH6 = fontSizeSmall;
-export const lineHeightH6 = lineHeightSmall;
+export const fontSizeH3 = fontSizeBase;
+export const lineHeightH3 = lineHeightBase;
 
 export const fontSizeLabel = fontSizeSmall;
 export const lineHeightLabel = lineHeightSmall;
@@ -35,6 +26,8 @@ export const foreground = '#041133';
 
 export const foregroundAccent = '#02c39a';
 export const foregroundError = '#f45b69';
+
+export const border = '#88888866';
 
 export const breakpointLarger = '1201px';
 export const breakpointLarge = '1200px';
@@ -47,6 +40,7 @@ export const cssVarColorsNames = {
   foreground: 'var(--color-foreground)',
   foregroundAccent: 'var(--color-foregroundAccent)',
   foregroundError: 'var(--color-foregroundError)',
+  border: 'var(--color-border)',
 };
 
 export const darkColorsTheme = {
@@ -56,6 +50,7 @@ export const darkColorsTheme = {
     foreground: invert(foreground),
     foregroundAccent: invert(foregroundAccent),
     foregroundError,
+    border: invert(foregroundAccent),
   },
 };
 
@@ -66,6 +61,7 @@ export const lightColorsTheme = {
     foreground,
     foregroundAccent,
     foregroundError,
+    border,
   },
 };
 
@@ -78,9 +74,6 @@ const theme = {
     h1: lineHeightH1,
     h2: lineHeightH2,
     h3: lineHeightH3,
-    h4: lineHeightH4,
-    h5: lineHeightH5,
-    h6: lineHeightH6,
     label: lineHeightLabel,
   },
   fontSizes: {
@@ -90,9 +83,6 @@ const theme = {
     h1: fontSizeH1,
     h2: fontSizeH2,
     h3: fontSizeH3,
-    h4: fontSizeH4,
-    h5: fontSizeH5,
-    h6: fontSizeH6,
     label: fontSizeLabel,
   },
   borders: { basic: 'solid .125rem' },

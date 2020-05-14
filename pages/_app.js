@@ -32,8 +32,7 @@ class MyApp extends App {
     // Gather serialization-friendly data from services
     const initialData = {
       language: mobxServices.languageService.data(),
-      github: mobxServices.githubService.data(),
-      readme: mobxServices.readmeService.data(),
+      videos: mobxServices.videosService.data(),
     };
 
     // Pass initialData to render

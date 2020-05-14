@@ -1,6 +1,6 @@
-import { observable, action } from 'mobx';
+import { observable, action, computed } from 'mobx';
 
-class ReadmeService {
+class VideosService {
   @observable response = [];
 
   @observable isLoaded = false;
@@ -8,7 +8,7 @@ class ReadmeService {
   @observable hasError = false;
 
   constructor(
-    initialData = { response: '', isLoaded: false, hasError: false },
+    initialData = { response: [], isLoaded: false, hasError: false },
   ) {
     if (initialData) {
       this.response = initialData.response;
@@ -21,11 +21,17 @@ class ReadmeService {
     this.isLoaded = false;
     this.hasError = false;
 
-    const resp = await fetch(
-      'https://raw.githubusercontent.com/ShadOoW/web-starter-kit/master/README.md',
-    );
-    this.response = await resp.text();
-    this.isLoaded = true;
+    const resp = await fetch('http://localhost:3001/api/videos');
+    this.response = await resp.json();
+    if (this.response.constructor === Array) {
+      this.isLoaded = true;
+    } else {
+      this.hasError = true;
+    }
+  }
+
+  @computed get videos() {
+    return this.response;
   }
 
   data() {
@@ -37,4 +43,4 @@ class ReadmeService {
   }
 }
 
-export default ReadmeService;
+export default VideosService;
