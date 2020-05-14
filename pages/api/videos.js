@@ -8,10 +8,14 @@ const handler = nextConnect();
 handler.use(middleware);
 
 handler.get(async (req, res) => {
-  req.db.collection('videos').find({}).toArray((error, videos) => {
+  req.db.collection('videos').find({}).sort({ score: -1 }).toArray((error, videos) => {
     if (error) throw error;
 
     const hydrtaed = videos.map(video => {
+      const created = new Date(video.published);
+      const milliseconds = Math.abs(Date.now() - created.getTime());
+      const hours = milliseconds / 36e5;
+
       return {
         videoId: video.videoId,
         title: video.title,
@@ -21,6 +25,14 @@ handler.get(async (req, res) => {
         channel: {
           name: CHANNELS[video.channelId].name,
           avatar: CHANNELS[video.channelId].avatar,
+        },
+        debug: {
+          score: video.score,
+          viewCount: video.statistics.viewCount,
+          likeCount: video.statistics.likeCount,
+          dislikeCount: video.statistics.dislikeCount,
+          commentCount: video.statistics.commentCount,
+          hours,
         }
       }
     });

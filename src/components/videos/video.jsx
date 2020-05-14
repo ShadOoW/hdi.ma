@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { toJS } from 'mobx';
 
 // Import Utils
 import { formatTime } from 'utils';
@@ -34,7 +35,15 @@ function Video({ video }) {
 
   return (
     <Block border='1px solid' borderColor={cssVarColorsNames.border}>
-      <Cover position='relative' alignItems='center' justifyContent='center' pb='56.25%'>
+      <Cover
+        position='relative'
+        alignItems='center'
+        justifyContent='center'
+        pb='56.25%'
+        onClick={() => {
+          console.info(toJS(video.debug))
+        }}
+      >
         <img src={videoThumbnail} alt={video.title} />
       </Cover>
       <Flex mt='1.2rem' mb='2.4rem' px='1.5rem'>
@@ -75,6 +84,14 @@ Video.propTypes = {
       name: PropTypes.string.isRequired,
       avatar: PropTypes.string.isRequired,
     }).isRequired,
+    debug: PropTypes.shape({
+      score: PropTypes.number.isRequired,
+      viewCount: PropTypes.number.isRequired,
+      likeCount: PropTypes.number.isRequired,
+      dislikeCount: PropTypes.number.isRequired,
+      commentCount: PropTypes.number.isRequired,
+      hours: PropTypes.number.isRequired,
+    }),
   }).isRequired,
 };
 
