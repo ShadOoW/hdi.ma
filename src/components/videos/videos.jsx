@@ -20,11 +20,8 @@ import Video from './video';
 function Videos() {
   const { videosService } = useMobxServices();
 
-  // const thumbnailUrl = (videoId) => 
-  // 'https://i1.ytimg.com/vi/videoId/hqdefault.jpg'
-
   return (
-    <Flex flexDirection='column'>
+    <Flex flexDirection='row' flexWrap='wrap'>
       {videosService.isLoaded &&
         videosService.videos.map((video) => (
           <Video key={video.videoId} video={video} />

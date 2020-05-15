@@ -67,7 +67,7 @@ export const lightColorsTheme = {
 
 const theme = {
   space: ['0', '.25rem', '.5rem', '1rem', '2rem', '4rem', '8rem'],
-  sizes: { small: 640, medium: 920, large: 1200, larger: 1366 },
+  sizes: { small: 640, medium: 920, large: 1200, larger: 1585 },
   lineHeights: {
     base: lineHeightBase,
     small: lineHeightSmall,

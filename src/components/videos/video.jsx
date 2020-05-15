@@ -17,34 +17,36 @@ import { Flex, Block } from 'layout';
 import { Text, Small } from 'typography';
 
 const Cover = styled(Flex)`
+  overflow: hidden;
+
   img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     width: 100%;
-    min-height: 100%;
-    margin: auto;
+    margin: -9.4% 0;
   }
 `;
 
 function Video({ video }) {
   const channelAvatar = `${video.channel.avatar}=s68-c-k-c0x00ffffff-no-rj-mo`;
-  const videoThumbnail = `https://i.ytimg.com/vi/${video.videoId}/hq720.jpg`;
+  const videoThumbnail =
+    `https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`
 
   return (
-    <Block border='1px solid' borderColor={cssVarColorsNames.border}>
+    <Block
+      maxWidth='48rem'
+      minWidth='36rem'
+      flex='1'
+      width='100%'
+      mx={[0, '.8rem']}
+      mb={[0, 5]}
+      border={['1px solid', '0px']}
+      borderColor={cssVarColorsNames.border}
+    >
       <Cover
-        position='relative'
-        alignItems='center'
-        justifyContent='center'
-        pb='56.25%'
         onClick={() => {
           console.info(toJS(video.debug))
         }}
       >
-        <img src={videoThumbnail} alt={video.title} />
+        <img alt={video.title} src={videoThumbnail} />
       </Cover>
       <Flex mt='1.2rem' mb='2.4rem' px='1.5rem'>
         <Flex
@@ -78,7 +80,10 @@ Video.propTypes = {
     videoId: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    viewCount: PropTypes.string.isRequired,
+    viewCount: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]).isRequired,
     created: PropTypes.string.isRequired,
     channel: PropTypes.shape({
       name: PropTypes.string.isRequired,

@@ -1,7 +1,7 @@
 import nextConnect from 'next-connect';
 import { formatNumber } from 'utils';
 import middleware from '../../middleware/database';
-import CHANNELS from '../../data/channels/index.json';
+import CHANNELS from '../../data/channels.json';
 
 const handler = nextConnect();
 
