@@ -26,6 +26,7 @@ const Cover = styled(Flex)`
 `;
 
 function Video({ video }) {
+  const videoUrl = `https://www.youtube.com/watch?v=${video.videoId}`
   const channelAvatar = `${video.channel.avatar}=s68-c-k-c0x00ffffff-no-rj-mo`;
   const videoThumbnail =
     `https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`
@@ -42,11 +43,11 @@ function Video({ video }) {
       borderColor={cssVarColorsNames.border}
     >
       <Cover
-        onClick={() => {
-          console.info(toJS(video.debug))
-        }}
+        onClick={() => { console.info(toJS(video.debug)) }}
       >
-        <img alt={video.title} src={videoThumbnail} />
+        <a href={videoUrl} target='_blank' rel='noreferrer'>
+          <img alt={video.title} src={videoThumbnail} />
+        </a>
       </Cover>
       <Flex mt='1.2rem' mb='2.4rem' px='1.5rem'>
         <Flex
