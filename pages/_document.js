@@ -70,8 +70,8 @@ export default class MyDocument extends Document {
             rel='stylesheet'
           />
 
-          <meta name='apple-mobile-web-app-title' content='Web Starter Kit' />
-          <meta name='application-name' content='Web Starter Kit' />
+          <meta name='apple-mobile-web-app-title' content='HDI.ma' />
+          <meta name='application-name' content='HDI.ma' />
           <meta name='msapplication-TileColor' content='#da532c' />
           <meta name='theme-color' content='#fe5186' />
 
@@ -80,20 +80,20 @@ export default class MyDocument extends Document {
             content='width=device-width, initial-scale=1.0'
           />
 
-          <meta property='og:title' content='Web Starter Kit' />
+          <meta property='og:title' content='HDI.ma' />
           <meta property='og:type' content='website' />
           <meta
             property='og:url'
-            content='http://web-starter-kit-nextjs.herokuapp.com'
+            content='http://hdima.herokuapp.com'
           />
           <meta
             property='og:image'
-            content='https://image.slidesharecdn.com/finaljasdeep-170405154955/95/nextjs-in-production-by-jasdeep-lalli-1-638.jpg?cb=1491407432'
+            content='https://otakufr.net/wp-content/uploads/2019/12/One-Piece-5-e%CC%81le%CC%81ments-indiquant-que-Luffy-deviendra-le-roi-des-pirates-e1579880689630.jpg'
           />
 
           <meta
             name='description'
-            content='An opinionated starter kit with styled-system, graphql-hooks and nextjs.'
+            content='A video-news Hub.'
           />
           <meta name='robots' content='index, follow' />
         </Head>
