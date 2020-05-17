@@ -17,11 +17,11 @@ class VideosService {
     }
   }
 
-  @action async fetch() {
+  @action async fetch(basePath) {
     this.isLoaded = false;
     this.hasError = false;
 
-    const resp = await fetch('http://localhost:3001/api/videos');
+    const resp = await fetch(`${basePath}/api/videos`);
     this.response = await resp.json();
     if (this.response.constructor === Array) {
       this.isLoaded = true;

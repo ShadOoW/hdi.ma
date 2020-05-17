@@ -33,7 +33,9 @@ function HomePage() {
 
 HomePage.getInitialProps = async ({ mobxServices, req }) => {
   const currentLanguage = req ? req.language : i18n.language;
-  await mobxServices.videosService.fetch();
+  const basePath = req ? `${req.protocol}://${req.get('host')}` : '';
+
+  await mobxServices.videosService.fetch(basePath);
 
   return {
     language: currentLanguage,
