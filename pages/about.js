@@ -10,28 +10,26 @@ import { H3 } from 'typography';
 // Import Partials
 import { Header } from 'partials';
 
-function ReadmePage() {
+function AboutPage() {
   return (
     <>
       <Head>
-        <title>Readme Page</title>
+        <title>About Page</title>
       </Head>
       <Container>
         <Header />
         <Content>
-          <H3>Readme Page</H3>
-
+          <H3>About Page</H3>
         </Content>
       </Container>
     </>
   );
 }
 
-ReadmePage.getInitialProps = async ({ mobxServices }) => {
-  await mobxServices.readmeService.fetch();
+AboutPage.getInitialProps = async () => {
   return {
     namespacesRequired: ['common'],
   };
 };
 
-export default ReadmePage;
+export default AboutPage;
