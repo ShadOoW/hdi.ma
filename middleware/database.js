@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb';
 import nextConnect from 'next-connect';
 
-const client = new MongoClient('mongodb://localhost:27017', {
+const client = new MongoClient(process.env.MONGODB_DB_YOUTUBE, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -9,7 +9,7 @@ const client = new MongoClient('mongodb://localhost:27017', {
 async function database(req, res, next) {
   if (!client.isConnected()) await client.connect();
   req.dbClient = client;
-  req.db = client.db('test');
+  req.db = client.db('youtube');
   return next();
 }
 
