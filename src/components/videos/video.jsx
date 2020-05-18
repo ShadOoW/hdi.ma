@@ -20,7 +20,7 @@ import { Text, Small } from 'typography';
 import { Image } from 'common/image';
 
 // Import Base64 SVG
-import placeholder from './placeholder';
+import { thumbnailSVG, avatarSVG } from './placeholder';
 
 const Cover = styled(Flex)`
   overflow: hidden;
@@ -55,7 +55,7 @@ function Video({ video }) {
           <Image
             alt={video.title}
             src={videoThumbnail}
-            fallbackSrc={`data:image/svg+xml;base64,${placeholder}`}
+            fallbackSrc={`data:image/svg+xml;base64,${thumbnailSVG}`}
             isLazy
           />
         </a>
@@ -70,6 +70,12 @@ function Video({ video }) {
           overflow='hidden'
           bg='#88888833'
         >
+          <Image
+            alt={video.channel.name}
+            src={channelAvatar}
+            fallbackSrc={`data:image/svg+xml;base64,${avatarSVG}`}
+            isLazy
+          />
           <img src={channelAvatar} alt={video.channel.name} />
         </Flex>
         <Flex alignItems='flex-start' flexDirection='column' ml='1.2rem'>
