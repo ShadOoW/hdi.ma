@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Component
-import { SVGBurger, SVGThemeTogger } from 'common/icons';
+import { SVGBurger, SVGThemeTogger, SVGFilter } from 'common/icons';
 
 // Layout
 import { Flex } from 'layout';
@@ -11,10 +11,24 @@ export default {
 };
 
 export const Icons = () => (
-  <Flex>
-    <Flex pr='2rem'>
-      <SVGBurger />
+  <>
+    <Flex pb='1rem'>
+      <Flex pr='2rem'>
+        <SVGBurger />
+      </Flex>
+      <Flex pr='2rem'>
+        <SVGThemeTogger />
+      </Flex>
+      <SVGFilter />
     </Flex>
-    <SVGThemeTogger />
-  </Flex>
+    <Flex color='red'>
+      <Flex pr='2rem'>
+        <SVGBurger />
+      </Flex>
+      <Flex pr='2rem'>
+        <SVGThemeTogger />
+      </Flex>
+      <SVGFilter />
+    </Flex>
+  </>
 );
