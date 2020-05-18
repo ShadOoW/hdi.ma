@@ -19,6 +19,9 @@ import { Text, Small } from 'typography';
 // Import Common
 import { Image } from 'common/image';
 
+// Import Base64 SVG
+import placeholder from './placeholder';
+
 const Cover = styled(Flex)`
   overflow: hidden;
 
@@ -52,7 +55,7 @@ function Video({ video }) {
           <Image
             alt={video.title}
             src={videoThumbnail}
-            fallbackSrc='/images/placeholder.jpg'
+            fallbackSrc={`data:image/svg+xml;base64,${placeholder}`}
             isLazy
           />
         </a>
