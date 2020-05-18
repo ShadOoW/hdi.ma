@@ -7,7 +7,7 @@ import Head from 'next/head';
 import 'mobx-react-lite/batchingForReactDom'
 
 // Parials
-import { Header } from 'partials';
+import { Header, Filter, Blocker } from 'partials';
 
 // Layout
 import { Container, Content } from 'layout';
@@ -27,6 +27,8 @@ function HomePage() {
           <Videos />
         </Content>
       </Container>
+      <Blocker />
+      <Filter />
     </>
   );
 }

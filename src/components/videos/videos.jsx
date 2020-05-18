@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
 
-// Services
+// Import Services
 import { useMobxServices } from 'services';
 
 // Import Layout

@@ -1,32 +1,64 @@
+// Import Dependencies
 import React from 'react';
+
+// Import Theme
 import { cssVarColorsNames } from 'styles/theme';
 
-import { Flex } from 'layout';
-import Logo from './logo';
-import Menu from './menu';
+// Import Services
+import { useMobxServices } from 'services';
 
-const Header = () => (
-  <Flex
-    bg={cssVarColorsNames.backgroundAccent}
-    color={cssVarColorsNames.foregroundAccent}
-    p={2}
-    position='relative'
-  >
+// Import Layout
+import { Flex, Block } from 'layout';
+
+// Import Icons
+import { SVGBurger, SVGFilter } from 'common/icons';
+
+// Import Common
+import { Button } from 'common/button';
+
+// Import Components
+import Logo from './logo';
+import ThemeSwitcher from './theme-switcher';
+
+const Header = () => {
+  const { filterService } = useMobxServices();
+
+  return (
     <Flex
-      justifyContent='space-between'
-      alignItems='center'
-      width='larger'
-      maxWidth='100%'
-      m='auto'
+      bg={cssVarColorsNames.backgroundAccent}
+      color={cssVarColorsNames.foregroundAccent}
+      position='fixed'
+      width='100%'
+      py='.5rem'
+      px='2rem'
+      zIndex='102'
     >
-      <a href='/'>
-        <Logo />
-      </a>
-      <Flex flexDirection={['row-reverse', 'row']}>
-        <Menu />
+      <Flex
+        alignItems='center'
+        width='100%'
+      >
+        <Button
+          size='small'
+          aria-label='Navigation Menu'
+          mr='2rem'
+        >
+          <SVGBurger />
+        </Button>
+        <a href='/'>
+          <Logo />
+        </a>
+        <Block flex='1' />
+        <ThemeSwitcher />
+        <Button
+          size='small'
+          aria-label='Theme Toggler'
+          onClick={() => filterService.toggle()}
+        >
+          <SVGFilter />
+        </Button>
       </Flex>
     </Flex>
-  </Flex>
-);
+  );
+}
 
 export default Header;

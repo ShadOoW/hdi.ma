@@ -1,3 +1,4 @@
 import Header from './header';
+import { Filter, Blocker } from './filter';
 
-export { Header };
+export { Header, Filter, Blocker };

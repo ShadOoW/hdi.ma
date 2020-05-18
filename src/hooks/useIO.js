@@ -10,7 +10,6 @@ const useIO = (options) => {
 
   useEffect(() => {
     if (elements.length) {
-      console.log('-----CONNECTING OBSERVER------');
       intersectionObserver.current = new IntersectionObserver((ioEntries) => {
         setEntries(ioEntries);
       }, {
@@ -25,7 +24,6 @@ const useIO = (options) => {
     }
     return () => {
       if (intersectionObserver.current) {
-        console.log('-----DISCONNECTING OBSERVER------');
         intersectionObserver.current.disconnect();
       }
     }

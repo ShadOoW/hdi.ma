@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Flex, Block } from './display';
 
 export const Content = ({ children }) => (
-  <Flex flexDirection='column'>
+  <Flex pt='5.8rem' flexDirection='column'>
     <Flex flexDirection='column' alignItems='center' justifyContent='center'>
       <Block maxWidth='larger' width='100%' p={[0, 5]}>
         {children}

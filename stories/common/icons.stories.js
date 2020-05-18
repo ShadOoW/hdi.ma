@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Component
-import { SVGBurger, SVGThemeTogger, SVGFilter } from 'common/icons';
+import { SVGBurger, SVGThemeSwitch, SVGFilter } from 'common/icons';
 
 // Layout
 import { Flex } from 'layout';
@@ -17,7 +17,7 @@ export const Icons = () => (
         <SVGBurger />
       </Flex>
       <Flex pr='2rem'>
-        <SVGThemeTogger />
+        <SVGThemeSwitch />
       </Flex>
       <SVGFilter />
     </Flex>
@@ -26,7 +26,7 @@ export const Icons = () => (
         <SVGBurger />
       </Flex>
       <Flex pr='2rem'>
-        <SVGThemeTogger />
+        <SVGThemeSwitch />
       </Flex>
       <SVGFilter />
     </Flex>

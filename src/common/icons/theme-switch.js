@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SVGThemeToggler = ({ width, height }) => (
+const SVGThemeSwitch = ({ width, height }) => (
   <svg
     viewBox='0 0 24 24'
     width={width}
@@ -19,14 +19,14 @@ const SVGThemeToggler = ({ width, height }) => (
   </svg>
 );
 
-SVGThemeToggler.defaultProps = {
+SVGThemeSwitch.defaultProps = {
   width: '24px',
   height: '24px',
 };
 
-SVGThemeToggler.propTypes = {
+SVGThemeSwitch.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
 };
 
-export default SVGThemeToggler;
+export default SVGThemeSwitch;

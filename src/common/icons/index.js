@@ -1,5 +1,5 @@
 import SVGBurger from './burger';
-import SVGThemeTogger from './theme-toggler';
+import SVGThemeSwitch from './theme-switch';
 import SVGFilter from './filter';
 
-export { SVGBurger, SVGThemeTogger, SVGFilter };
+export { SVGBurger, SVGThemeSwitch, SVGFilter };

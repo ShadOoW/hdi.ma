@@ -33,6 +33,7 @@ class MyApp extends App {
     const initialData = {
       language: mobxServices.languageService.data(),
       videos: mobxServices.videosService.data(),
+      filter: mobxServices.filterService.data(),
     };
 
     // Pass initialData to render
