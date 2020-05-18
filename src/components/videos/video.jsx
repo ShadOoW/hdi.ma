@@ -16,6 +16,9 @@ import { Flex, Block } from 'layout';
 // Import Typography
 import { Text, Small } from 'typography';
 
+// Import Common
+import { Image } from 'common/image';
+
 const Cover = styled(Flex)`
   overflow: hidden;
 
@@ -46,7 +49,12 @@ function Video({ video }) {
         onClick={() => { console.info(toJS(video.debug)) }}
       >
         <a href={videoUrl} target='_blank' rel='noreferrer'>
-          <img alt={video.title} src={videoThumbnail} />
+          <Image
+            alt={video.title}
+            src={videoThumbnail}
+            fallbackSrc='/images/placeholder.jpg'
+            isLazy
+          />
         </a>
       </Cover>
       <Flex mt='1.2rem' mb='2.4rem' px='1.5rem'>

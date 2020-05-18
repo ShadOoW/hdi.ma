@@ -1,5 +1,5 @@
 // Import Dependencies
-import React from 'react';
+import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
 
 // Services
@@ -11,14 +11,37 @@ import { Flex } from 'layout';
 // Import Typography
 import { Text } from 'typography';
 
-// Import Common components
-// import { Button } from 'common/button';
+// Import Hooks
+import { useIO } from 'hooks';
 
 // Import Sub Components
 import Video from './video';
 
 function Videos() {
   const { videosService } = useMobxServices();
+
+  const [intersectionObserver, setElements, entries] = useIO({
+    threshold: 0,
+  })
+
+  // Lazyloading Images
+  useEffect(() => {
+    if (videosService.videos.length) {
+      const img = Array.from(document.getElementsByClassName('lazy'));
+      setElements(img)
+    }
+  }, [videosService.videos, setElements]);
+
+  useEffect(() => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const lazyImage = entry.target;
+        lazyImage.src = lazyImage.dataset.src;
+        lazyImage.classList.remove('lazy');
+        intersectionObserver.unobserve(lazyImage);
+      }
+    })
+  }, [entries, intersectionObserver])
 
   return (
     <Flex flexDirection='row' flexWrap='wrap'>

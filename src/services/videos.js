@@ -21,7 +21,7 @@ class VideosService {
     this.isLoaded = false;
     this.hasError = false;
 
-    const resp = await fetch(`${basePath}/api/videos`);
+    const resp = await fetch(`${basePath}/api/videos/list`);
     this.response = await resp.json();
     if (this.response.constructor === Array) {
       this.isLoaded = true;
