@@ -14,7 +14,7 @@ const Blocker = () => {
   return (
     <Block
       width='100vw'
-      height='calc(100vh - 5.8rem)'
+      height='calc(100% - 5.8rem)'
       position='fixed'
       display={filterService.isOpen ? 'block' : 'none'}
       top='5.8rem'

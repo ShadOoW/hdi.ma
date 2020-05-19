@@ -3,6 +3,8 @@ import { darkColorsTheme, lightColorsTheme } from 'styles/theme';
 
 const init = css`
   html {
+    height: 100%;
+    width: 100%;
     font-size: ${(props) => props.theme.fontSizes.init};
 
     --color-background: ${lightColorsTheme.colors.background};
@@ -22,6 +24,8 @@ const init = css`
     }
   }
   body {
+    height: 100%;
+    width: 100%;
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-size: ${(props) => props.theme.fontSizes.base};

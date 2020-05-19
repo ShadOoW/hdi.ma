@@ -31,7 +31,7 @@ const Filter = () => {
   return (
     <Menu
       width='35rem'
-      height='calc(100vh - 5.8rem)'
+      height='calc(100% - 5.8rem)'
       position='fixed'
       isOpen={filterService.isOpen}
       top='5.8rem'
