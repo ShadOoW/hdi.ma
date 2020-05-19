@@ -28,7 +28,7 @@ function Videos() {
   useEffect(() => {
     if (videosService.videos.length) {
       const img = Array.from(document.getElementsByClassName('lazy'));
-      setElements(img)
+      setElements(img);
     }
   }, [videosService.videos, setElements]);
 

@@ -42,10 +42,19 @@ const Button = styled(FlexButton)(
       },
     },
   }),
+  variant({
+    prop: 'fill',
+    variants: {
+      available: {
+        width: '100%',
+      },
+    },
+  }),
 );
 
 Button.defaultProps = {
   size: 'normal',
+  fill: 'exact',
 };
 
 Button.propTypes = {

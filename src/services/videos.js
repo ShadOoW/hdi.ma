@@ -7,13 +7,16 @@ class VideosService {
 
   @observable hasError = false;
 
+  @observable filteredChannels = [];
+
   constructor(
-    initialData = { response: [], isLoaded: false, hasError: false },
+    initialData = { response: [], isLoaded: false, hasError: false, filteredChannels: [] },
   ) {
     if (initialData) {
       this.response = initialData.response;
       this.isLoaded = initialData.isLoaded;
       this.hasError = initialData.hasError;
+      this.filteredChannels = initialData.filteredChannels;
     }
   }
 
@@ -30,8 +33,16 @@ class VideosService {
     }
   }
 
+  @action setFilteredChannels(filteredChannels) {
+    this.filteredChannels = filteredChannels;
+  }
+
   @computed get videos() {
-    return this.response;
+    if (this.filteredChannels.length === 0) {
+      return this.response;
+    }
+
+    return this.response.filter(video => this.filteredChannels.includes(video.channel.channelId));
   }
 
   data() {
@@ -39,6 +50,7 @@ class VideosService {
       response: this.response,
       isLoaded: this.isLoaded,
       hasError: this.hasError,
+      filteredChannels: this.filteredChannels,
     };
   }
 }

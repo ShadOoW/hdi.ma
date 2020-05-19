@@ -14,10 +14,10 @@ const Blocker = () => {
   return (
     <Block
       width='100vw'
-      height='calc(100vh - 58px)'
+      height='calc(100vh - 5.8rem)'
       position='fixed'
       display={filterService.isOpen ? 'block' : 'none'}
-      top='58px'
+      top='5.8rem'
       left='0'
       bg='#000'
       opacity='0.6'

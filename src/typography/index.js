@@ -7,6 +7,10 @@ const styles = css`
   ${typography}
   ${color}
   ${size}
+
+  ${({ bold }) => bold && 'font-weight: bold;'}
+  ${({ capitalize }) => capitalize && 'text-transform: capitalize;'}
+  ${({ uppercase }) => uppercase && 'text-transform: uppercase;'}
 `;
 
 const stylesH1 = css`
@@ -99,8 +103,6 @@ export const Text = styled.span`
   ${({ h4 }) => h4 && stylesH4}
   ${({ small }) => small && stylesSmall}
   ${({ error }) => error && `color: ${cssVarColorsNames.foregroundError};`}
-  ${({ bold }) => bold && 'font-weight: bold;'}
-  ${({ capitalize }) => capitalize && 'text-transform: capitalize;'}
   ${({ breakAll }) => breakAll && 'word-break: break-all;'}
   ${({ ellipsis }) =>
     ellipsis &&

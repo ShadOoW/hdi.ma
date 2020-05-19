@@ -26,6 +26,7 @@ handler.get(async (req, res) => {
           viewCount: formatNumber(video.statistics.viewCount),
           created: video.published,
           channel: {
+            channelId: video.channelId,
             name: CHANNELS[video.channelId].name,
             avatar: CHANNELS[video.channelId].avatar,
           },
