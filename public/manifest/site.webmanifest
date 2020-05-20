@@ -1,8 +1,9 @@
 {
   "name": "HDI.ma",
   "short_name": "HDI.ma",
-  "display": "standalone",
   "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "/manifest/android-chrome-192x192.png",
