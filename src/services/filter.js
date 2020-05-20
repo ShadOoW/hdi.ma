@@ -55,14 +55,14 @@ class FilterService {
     return this.response;
   }
 
-  @computed get total() {
+  @computed get count() {
     if (this.filteredChannels.length === 0) {
-      return this.response.map(channel => channel.total).reduce((sum, next) => sum + next);
+      return this.response.map(channel => channel.count).reduce((sum, next) => sum + next);
     }
 
     return this.response
       .filter(channel => this.filteredChannels.includes(channel.id))
-      .map(channel => channel.total)
+      .map(channel => channel.count)
       .reduce((sum, next) => sum + next);
   }
 

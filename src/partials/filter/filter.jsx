@@ -61,7 +61,7 @@ const Filter = () => {
                   }
                 )}
               />
-              <Small pl='1rem'>{channel.total}</Small>
+              <Small pl='1rem'>{channel.count}</Small>
             </Flex>
           ))}
         </Flex>
@@ -77,7 +77,7 @@ const Filter = () => {
           >
             <Flex flexDirection='column' justifyContent='center' width='100%'>
               <H2>Apply Filters</H2>
-              <div>{filterService.total} Videos</div>
+              <div>{filterService.count} Videos</div>
             </Flex>
           </Button>
         </Flex>

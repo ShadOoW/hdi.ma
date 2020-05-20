@@ -10,12 +10,13 @@ handler.get(async (req, res) => {
   req.db.collection('videos')
     .aggregate([
       { $match: { score: { $exists: true } } },
-      { $group: { _id: '$channelId', total: { $sum: 1 } } },
+      { $group: { _id: '$channelId', count: { $sum: 1 } } },
+      { $sort: { count: -1 } },
       {
         $project: {
           _id: 0,
           id: '$_id',
-          total: 1
+          count: 1
         }
       }
     ])
@@ -24,7 +25,7 @@ handler.get(async (req, res) => {
 
       const channels = channelAggs.map(channelAgg => ({
         id: channelAgg.id,
-        total: channelAgg.total,
+        count: channelAgg.count,
         name: CHANNELS[channelAgg.id].name,
         avatar: CHANNELS[channelAgg.id].avatar,
       }));
