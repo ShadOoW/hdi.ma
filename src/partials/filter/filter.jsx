@@ -44,8 +44,8 @@ const Filter = () => {
         width='100%'
         p='2rem'
       >
-        <H2 color={cssVarColorsNames.foregroundAccent} pb='2rem' uppercase bold>Channels</H2>
-        <Flex flexDirection='column' flex='1' overflowY='auto'>
+        <H2 color={cssVarColorsNames.foregroundAccent} pb='1rem' uppercase bold>Channels</H2>
+        <Flex pl='1rem' pt='1rem' flexDirection='column' flex='1' overflowY='auto'>
           {filterService.response.map(channel => (
             <Flex pb='1rem' key={channel.id} alignItems='center'>
               <Checkbox
