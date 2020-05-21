@@ -9,6 +9,6 @@ module.exports = new NextI18Next({
     ar: 'ar',
   },
   fallbackLng: 'en',
-  ignoreRoutes: ['/service-worker.js'],
+  ignoreRoutes: ['/service-worker.js', 'service-worker.js.map'],
   localePath: typeof window === 'undefined' ? 'public/locales' : 'locales',
 });

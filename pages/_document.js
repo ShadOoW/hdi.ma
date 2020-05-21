@@ -65,22 +65,40 @@ export default class MyDocument extends Document {
             href='/manifest/safari-pinned-tab.svg'
             color='#5bbad5'
           />
+          {/* <link rel='shortcut icon' href='/static/icons/favicon.ico' /> */}
           <link
             href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'
             rel='stylesheet'
           />
 
-          <meta name='apple-mobile-web-app-title' content='HDI.ma' />
           <meta name='application-name' content='HDI.ma' />
-          <meta name='msapplication-TileColor' content='#da532c' />
+          <meta name='description' content='A News Hub.' />
+          <meta name='mobile-web-app-capable' content='yes' />
+
+          <meta name='apple-mobile-web-app-title' content='HDI.ma' />
+          <meta name='apple-mobile-web-app-capable' content='yes' />
+          <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+
+          {/* <meta name='msapplication-config' content='/static/icons/browserconfig.xml' /> */}
+          <meta name='msapplication-TileColor' content='#fe5186' />
+          <meta name='msapplication-tap-highlight' content='no' />
+
           <meta name='theme-color' content='#fe5186' />
+
+          {/* <meta name='twitter:card' content='summary' />
+          <meta name='twitter:url' content='https://yourdomain.com' />
+          <meta name='twitter:title' content='PWA App' />
+          <meta name='twitter:description' content='Best PWA App in the world' />
+          <meta name='twitter:image' content='https://yourdomain.com/static/icons/android-chrome-192x192.png' />
+          <meta name='twitter:creator' content='@DavidWShadow' /> */}
 
           <meta
             name='viewport'
-            content='width=device-width, initial-scale=1.0'
+            content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
           />
 
           <meta property='og:title' content='HDI.ma' />
+          <meta property='og:site_name' content='HDI.ma' />
           <meta property='og:type' content='website' />
           <meta
             property='og:url'
@@ -93,7 +111,7 @@ export default class MyDocument extends Document {
 
           <meta
             name='description'
-            content='A video-news Hub.'
+            content='A News Hub.'
           />
           <meta name='robots' content='index, follow' />
         </Head>
